@@ -5,7 +5,7 @@ void main() {
 
 }
 //stless
-
+//widget = lego building block
 class MainApp extends StatefulWidget {
    MainApp({super.key});
 
@@ -13,8 +13,15 @@ class MainApp extends StatefulWidget {
   State<MainApp> createState() => _MainAppState();
 }
 
+//state = juice
 class _MainAppState extends State<MainApp> {
-  int count = 0;
+  int count = 0;  //count = mango juice
+
+  void incrementCounter(){
+    setState(() {
+      count++;
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -22,7 +29,7 @@ class _MainAppState extends State<MainApp> {
       home: Scaffold(
         appBar: AppBar(title: Text('learning flutter'),backgroundColor: Colors.amber),
         body: Center(child: Text('you have pressed $count times' )),
-        floatingActionButton: FloatingActionButton(onPressed: () { count++;
+        floatingActionButton: FloatingActionButton(onPressed: () { incrementCounter();
           print('$count');},child: Icon(Icons.add),),
       )
     );
