@@ -1,21 +1,22 @@
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(const MainApp());
+  runApp( MainApp());
 
 }
 //stless
 
 class MainApp extends StatelessWidget {
-  const MainApp({super.key});
-
+   MainApp({super.key});
+  int count = 0;
   @override
   Widget build(BuildContext context) {
     return new MaterialApp(
       home: Scaffold(
         appBar: AppBar(title: Text('learning flutter'),backgroundColor: Colors.amber),
-        body: Center(child: Text('you have pressed 0 times' )),
-        floatingActionButton: FloatingActionButton(onPressed: () {  },child: Icon(Icons.add),),
+        body: Center(child: Text('you have pressed $count times' )),
+        floatingActionButton: FloatingActionButton(onPressed: () { count++;
+          print('$count');},child: Icon(Icons.add),),
       )
     );
   }
