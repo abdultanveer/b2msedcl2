@@ -6,9 +6,16 @@ void main() {
 }
 //stless
 
-class MainApp extends StatelessWidget {
+class MainApp extends StatefulWidget {
    MainApp({super.key});
+
+  @override
+  State<MainApp> createState() => _MainAppState();
+}
+
+class _MainAppState extends State<MainApp> {
   int count = 0;
+
   @override
   Widget build(BuildContext context) {
     return new MaterialApp(
