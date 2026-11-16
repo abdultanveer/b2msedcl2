@@ -12,7 +12,11 @@ class MainApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return new MaterialApp(
-      home: Text('hello msedcl'),
+      home: Scaffold(
+        appBar: AppBar(title: Text('learning flutter'),backgroundColor: Colors.amber),
+        body: Center(child: Text('you have pressed 0 times' )),
+        floatingActionButton: FloatingActionButton(onPressed: () {  },child: Icon(Icons.add),),
+      )
     );
   }
 }
