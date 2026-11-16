@@ -4,6 +4,6 @@ void main() {
  print("hello msedcl");
 
  runApp(new MaterialApp(
-   home: Text('hello world'),
+   home: Center(child: Text('hello world')),
  ));
 }
