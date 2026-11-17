@@ -13,24 +13,43 @@ class MyCustomForm extends StatefulWidget {
 //_MyCustomFormState = juice
 class _MyCustomFormState extends State<MyCustomForm> {
   final myController = TextEditingController();
+  late final FocusNode myFocusNode;
+
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    myFocusNode = FocusNode();
+
+  }
 
   @override
   void dispose() {
     myController.dispose();
+    myFocusNode.dispose();
+
     super.dispose();
   }
-
+//onChanged call back --
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
-        body:TextField(
-          onChanged: (text){
-            print('First text field: $text (${text.characters.length})');
-          },
-          controller: myController,
-          decoration: InputDecoration(border: OutlineInputBorder(), hintText: 'enter  username') ,
+        body:Column(
+          children: [
+            TextField(
+              autofocus: true,
+              onChanged: (text){
+                print('First text field: $text (${text.characters.length})');
+              },
+              controller: myController,
+              decoration: InputDecoration(border: OutlineInputBorder(), hintText: 'enter  username') ,
+            ),
+            TextField(focusNode: myFocusNode,),
+            ElevatedButton(onPressed: (){ myFocusNode.requestFocus();}, child: Text('change focus'))
+          ],
         ) ,
+
         floatingActionButton: FloatingActionButton(
           onPressed: (){
             showDialog<void>(
