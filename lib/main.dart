@@ -25,6 +25,7 @@ class _MainAppState extends State<MainApp> {
 
   @override
   Widget build(BuildContext context) {
+    print('build  method executing');
     return new MaterialApp(
       home: Scaffold(
         appBar: AppBar(title: Text('learning flutter'),backgroundColor: Colors.amber),
