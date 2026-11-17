@@ -25,6 +25,9 @@ class _MyCustomFormState extends State<MyCustomForm> {
     return MaterialApp(
       home: Scaffold(
         body:TextField(
+          onChanged: (text){
+            print('First text field: $text (${text.characters.length})');
+          },
           controller: myController,
           decoration: InputDecoration(border: OutlineInputBorder(), hintText: 'enter  username') ,
         ) ,
